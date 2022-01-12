@@ -16,15 +16,12 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
     <Wrapper>
       <h2>Your Shopping Cart</h2>
       {cartItems.length === 0 ? <p>No items in cart.</p> : null}
+      {/* above line means if you don't have anything inside your cart then display 'no items in cart' otherwise it is null */}
       {cartItems.map(item => (
-        <CartItem
-          key={item.id}
-          item={item}
-          addToCart={addToCart}
-          removeFromCart={removeFromCart}
-        />
+        <CartItem key={item.id} item={item} addToCart={addToCart}
+          removeFromCart={removeFromCart} />
       ))}
-      <h2>Total: ${calculateTotal(cartItems).toFixed(2)}</h2>
+      <h2>Total: ₹{calculateTotal(cartItems).toFixed(2)}</h2>
     </Wrapper>
   );
 };

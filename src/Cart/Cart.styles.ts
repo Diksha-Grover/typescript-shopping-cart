@@ -5,3 +5,4 @@ export const Wrapper = styled.aside`
   width: 500px;
   padding: 20px;
 `;
+// aside is used because cart is a kind of sidebar 

@@ -10,12 +10,14 @@ type Props = {
 };
 
 const Item: React.FC<Props> = ({ item, handleAddToCart }) => (
+// Props are arguments passed into React components. Props are passed to components via HTML attributes. props stands for properties.
   <Wrapper>
+  {/* React wrapper needs to provide access to all of the component's attributes and properties */}
     <img src={item.image} alt={item.title} />
     <div>
       <h3>{item.title}</h3>
       <p>{item.description}</p>
-      <h3>${item.price}</h3>
+      <h3>₹{item.price}</h3>
     </div>
     <Button onClick={() => handleAddToCart(item)}>Add to cart</Button>
   </Wrapper>

@@ -15,25 +15,18 @@ const CartItem: React.FC<Props> = ({ item, addToCart, removeFromCart }) => (
     <div>
       <h3>{item.title}</h3>
       <div className='information'>
-        <p>Price: ${item.price}</p>
-        <p>Total: ${(item.amount * item.price).toFixed(2)}</p>
+        <p>Price: ₹{item.price}</p>
+        <p>Total: ₹{(item.amount * item.price).toFixed(2)}</p>
+        {/* toFixed(2) is going to give you two decimals from amount  */}
       </div>
       <div className='buttons'>
-        <Button
-          size='small'
-          disableElevation
-          variant='contained'
-          onClick={() => removeFromCart(item.id)}
-        >
+        <Button size='small' disableElevation variant='contained' onClick={() => removeFromCart(item.id)}>
+        {/* disableElevation is used since we don't want any shadows */}
+        {/* variant='contained' because I want it to display with a background in the button */}
           -
         </Button>
         <p>{item.amount}</p>
-        <Button
-          size='small'
-          disableElevation
-          variant='contained'
-          onClick={() => addToCart(item)}
-        >
+        <Button size='small' disableElevation variant='contained' onClick={() => addToCart(item)}>
           +
         </Button>
       </div>
